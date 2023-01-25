@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Issue Tracker</h1>
+        <div class="new-issue-form">
+            <h3>Add New Issue</h3>
+            <form id="issue-form" action="#current-issues">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Enter the title for issue..." required>
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="Desrcibe the issue..." required>
+                <label for="severity">Severity</label>
+                <select name="severity" id="severity" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <label for="assigned-to">Assigned To</label>
+                <input type="text" id="assigned-to" placeholder="Enter responsible..." required>
+                <button class="btn" id="btn-add" type="submit">Add</button>
+            </form>
+        </div>
+        <hr>
+        <h2 id="current-issues">Current Issues</h2>
+        <div class="state-headline">
+            <div class="headline">NEW</div>
+            <div class="headline">DEVELOPEMENT</div>
+            <div class="headline">QA</div>
+            <div class="headline">FINISHED</div>
+        </div>
+        <div class="issues-container">
+            <div class="issue-state" id="new-state" draggable="false">
+                <!-- <div class="sticky-div" draggable="false"><h3>New</h3></div> -->
+               
+            </div>
+            <div class="issue-state" id="development-state">
+                <!-- <div class="sticky-div" draggable="false"><h3>In Development</h3></div> -->
+
+            </div>
+            <div class="issue-state" id="qa-state">
+                <!-- <div class="sticky-div"draggable="false"><h3>QA</h3></div> -->
+            </div>
+            <div class="issue-state" id="done-state">
+                <!-- <div class="sticky-div"draggable="false"><h3>Done</h3></div> -->
+            </div>
+        </div>
+        <hr>
+        <h2 id="closed-issues">Closed Issues</h2>
+        <div class="issues-container" id="closed-issues-container">
+
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/906b3f56ce.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
